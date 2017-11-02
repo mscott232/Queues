@@ -25,7 +25,7 @@ using System.Threading.Tasks;
 
 namespace Queues
 {
-    class Point
+    class Point : IComparable<Point>
     {
         const string STUDENT = "Matt Scott 0286401";
 
@@ -121,6 +121,11 @@ namespace Queues
         public override string ToString()
         {
             return string.Format("[{0},{1}]", row, column);
+        }
+
+        public int CompareTo(Point other)
+        {
+            throw new NotImplementedException();
         }
     }
 }
