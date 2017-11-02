@@ -60,28 +60,28 @@ namespace Queues
             Node<Point> node1 = new Node<Point>();
 
             Assert.That(node1, Is.Not.Null);
-            Assert.That(node1.GetData, Is.Null);
-            Assert.That(node1.GetNext, Is.Null);
-            Assert.That(node1.GetPrevious, Is.Null);
-        }
-
-        /**
-         * Test the data arg constructor, make sure the data is there and other properties are null
-         */
-        [Test]
-        public void TestDataArgContructor()
-        {
-            Point point1 = new Point(1, 1);
-            Node<Point> node1 = new Node<Point>(point1);
-
-            Assert.That(node1, Is.Not.Null);
-            Assert.That(node1.GetData(), Is.EqualTo(point1));
+            Assert.That(node1.GetElement(), Is.Null);
             Assert.That(node1.GetNext(), Is.Null);
             Assert.That(node1.GetPrevious(), Is.Null);
         }
 
         /**
-         * Test the all arg constructor, make sure the data is there and other properties are set
+         * Test the Element arg constructor, make sure the Element is there and other properties are null
+         */
+        [Test]
+        public void TestElementArgContructor()
+        {
+            Point point1 = new Point(1, 1);
+            Node<Point> node1 = new Node<Point>(point1);
+
+            Assert.That(node1, Is.Not.Null);
+            Assert.That(node1.GetElement(), Is.EqualTo(point1));
+            Assert.That(node1.GetNext(), Is.Null);
+            Assert.That(node1.GetPrevious(), Is.Null);
+        }
+
+        /**
+         * Test the all arg constructor, make sure the Element is there and other properties are set
          */
         [Test]
         public void TestAllArgContructor()
@@ -94,38 +94,38 @@ namespace Queues
             Node<Point> testNode = new Node<Point>(point3, node1, node2);
 
             Assert.That(testNode, Is.Not.Null);
-            Assert.That(testNode.GetData(), Is.EqualTo(point3));
+            Assert.That(testNode.GetElement(), Is.EqualTo(point3));
             Assert.That(testNode.GetNext(), Is.EqualTo(node2));
             Assert.That(testNode.GetPrevious(), Is.EqualTo(node1));
         }
 
         /**
-         * Test the GetData method to determine if the proper data is returned
+         * Test the GetElement method to determine if the proper Element is returned
          */
         [Test]
-        public void TestGetData()
+        public void TestGetElement()
         {
             Point point1 = new Point(1, 1);
             Node<Point> node1 = new Node<Point>(point1);
 
-            Assert.That(node1.GetData(), Is.EqualTo(point1));
+            Assert.That(node1.GetElement(), Is.EqualTo(point1));
         }
 
         /**
-         * Test the SetData method to determine if the proper data is added to the node
+         * Test the SetElement method to determine if the proper Element is added to the node
          */
         [Test]
-        public void TestSetData()
+        public void TestSetElement()
         {
             Point point1 = new Point(1, 1);
             Node<Point> node1 = new Node<Point>();
 
-            node1.SetData(point1);
-            Assert.That(node1.GetData(), Is.EqualTo(point1));
+            node1.SetElement(point1);
+            Assert.That(node1.GetElement(), Is.EqualTo(point1));
         }
 
         /**
-         * Test the GetPrevious method to determine if the proper data is returned
+         * Test the GetPrevious method to determine if the proper Element is returned
          */
         [Test]
         public void TestGetPrevious()
@@ -139,7 +139,7 @@ namespace Queues
         }
 
         /**
-         * Test the SetPrevious method to determine if the proper data is added to the node
+         * Test the SetPrevious method to determine if the proper Element is added to the node
          */
         [Test]
         public void TestSetPrevious()
@@ -154,7 +154,7 @@ namespace Queues
         }
 
         /**
-         * Test the GetNext method to determine if the proper data is returned
+         * Test the GetNext method to determine if the proper Element is returned
          */
         [Test]
         public void TestGetNext()
@@ -170,7 +170,7 @@ namespace Queues
         }
 
         /**
-         * Test the SetNext method to determine if the proper data is returned
+         * Test the SetNext method to determine if the proper Element is returned
          */
         [Test]
         public void TestSetNext()

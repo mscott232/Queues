@@ -29,7 +29,7 @@ namespace Queues
     {
         const string STUDENT = "Matt Scott 0286401";
 
-        private T data;
+        private T element;
         private Node<T> previous;
         public Node<T> next;
 
@@ -39,43 +39,43 @@ namespace Queues
         public Node() { }
 
         /// <summary>
-        /// A data constructor for a node
+        /// A element constructor for a node
         /// </summary>
-        /// <param name="data">The data to be stored in the node</param>
-        public Node(T data)
+        /// <param name="element">The element to be stored in the node</param>
+        public Node(T element)
         {
-            this.data = data;
+            this.element = element;
         }
 
         /// <summary>
         /// An all arg constructor for a node
         /// </summary>
-        /// <param name="data">The data to be stored in the node</param>
+        /// <param name="element">The element to be stored in the node</param>
         /// <param name="previous">The node that was created before this one</param>
         /// <param name="next">The node that was created after this one</param>
-        public Node(T data, Node<T> previous, Node<T> next)
+        public Node(T element, Node<T> previous, Node<T> next)
         {
-            this.data = data;
+            this.element = element;
             this.previous = previous;
             this.next = next;
         }
 
         /// <summary>
-        /// Returns the data stored in the node
+        /// Returns the element stored in the node
         /// </summary>
-        /// <returns>The data from the node</returns>
-        public T GetData()
+        /// <returns>The element from the node</returns>
+        public T GetElement()
         {
-            return data;
+            return element;
         }
 
         /// <summary>
-        /// Adds data to a node
+        /// Adds element to a node
         /// </summary>
-        /// <param name="data">The data to be added</param>
-        public void SetData(T data)
+        /// <param name="element">The element to be added</param>
+        public void SetElement(T element)
         {
-            this.data = data;
+            this.element = element;
         }
 
         /// <summary>

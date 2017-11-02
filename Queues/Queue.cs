@@ -73,7 +73,7 @@ namespace Queues
             }
             else
             {
-                return head.GetData();
+                return head.GetElement();
             }
         }
 
@@ -90,7 +90,7 @@ namespace Queues
             }
             else
             {
-                T oldData = head.GetData();
+                T oldData = head.GetElement();
 
                 // Determine if size is equal to 1 if it is head and tail are set to null
                 if(size == 1)
