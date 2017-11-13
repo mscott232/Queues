@@ -12,9 +12,9 @@ namespace Queues
         static void Main(string[] args)
         {
             // Read all the lines in the text file and load them into a string array
-            //String[] lines = File.ReadAllLines(@"C:\Users\Matt\Documents\School\Term 5\Programming 4\Assignments\Assignment 3\maze.maze");
+            String[] lines = File.ReadAllLines(@"C:\Users\Matt\Documents\School\Term 5\Programming 4\Assignments\Assignment 3\maze.maze");
             //String[] lines = File.ReadAllLines(@"C:\Users\Matt\Documents\School\Term 5\Programming 4\Assignments\Assignment 3\TestMazeNoExit.maze");
-            String[] lines = File.ReadAllLines(@"C:\Users\Matt\Documents\School\Term 5\Programming 4\Assignments\Assignment 3\TestMazeExit.maze");
+            //String[] lines = File.ReadAllLines(@"C:\Users\Matt\Documents\School\Term 5\Programming 4\Assignments\Assignment 3\TestMazeExit.maze");
 
 
             int[] dimensions = lines[0].Split(' ').Select(n => Convert.ToInt32(n)).ToArray();
@@ -37,11 +37,18 @@ namespace Queues
 
             if(breadthFirst.BreadthFirstSearch(startingPoint[0], startingPoint[1]))
             {
-                Console.WriteLine("Success");
+                Console.WriteLine(breadthFirst.ExitFound());
+                Stack<Point> stack = breadthFirst.PathToFollow();
+                while (!stack.IsEmpty())
+                {
+                    Console.WriteLine(String.Format("{0}", stack.Pop().ToString()));
+                }
+                Console.WriteLine(breadthFirst.DumpMaze());
             }
             else
             {
-                Console.WriteLine("Fail");
+                Console.WriteLine(breadthFirst.NoExit());
+                Console.WriteLine(breadthFirst.DumpMaze());
             }
 
             Console.ReadKey();
