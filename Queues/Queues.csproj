@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BreadthFirst.cs" />
+    <Compile Include="BreadthFirstTest.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="NodeTest.cs" />
     <Compile Include="Point.cs" />
